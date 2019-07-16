@@ -6479,7 +6479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standardTurretPrefab: {fileID: 6898688427556216860, guid: b95e2bf3c9e804b4fa65b48edbf8c8d7,
     type: 3}
-  secondTurretPrefab: {fileID: 6898688427556216860, guid: 4c478ba576c8ce74eb2b62c3b8353e05,
+  missileLauncherPrefab: {fileID: 6898688427556216860, guid: 4c478ba576c8ce74eb2b62c3b8353e05,
     type: 3}
 --- !u!1001 &837381559
 PrefabInstance:
@@ -14748,7 +14748,7 @@ PrefabInstance:
     - target: {fileID: 9038356950649377214, guid: 81a34faec91736247b75539ab3c19676,
         type: 3}
       propertyPath: m_Name
-      value: SecondTurretItem
+      value: MissileLauncherItem
       objectReference: {fileID: 0}
     - target: {fileID: 9038356950649377201, guid: 81a34faec91736247b75539ab3c19676,
         type: 3}
@@ -14863,7 +14863,7 @@ PrefabInstance:
     - target: {fileID: 9038356950649377200, guid: 81a34faec91736247b75539ab3c19676,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseSecondTurret
+      value: PurchaseMissileLauncher
       objectReference: {fileID: 0}
     - target: {fileID: 9038356950649377200, guid: 81a34faec91736247b75539ab3c19676,
         type: 3}
@@ -14885,6 +14885,12 @@ PrefabInstance:
       propertyPath: m_Colors.m_NormalColor.a
       value: 0.84705883
       objectReference: {fileID: 0}
+    - target: {fileID: 9038356950649377203, guid: 81a34faec91736247b75539ab3c19676,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8468d6bf4b746914382a5372eb2c182f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81a34faec91736247b75539ab3c19676, type: 3}
 --- !u!1001 &1816225074
