@@ -5,6 +5,7 @@ public class Shop : MonoBehaviour
 
     public TurretBlueprint standardTurret;
     public TurretBlueprint missileLauncher;
+    public TurretBlueprint slowTurret;
 
     BuildManager buildManager;
 
@@ -24,5 +25,11 @@ public class Shop : MonoBehaviour
     {
         Debug.Log("Missile Launcher Selected");
         buildManager.SelectTurretToBuild(missileLauncher);
+    }
+
+    public void SelectSlowTurret()
+    {
+        Debug.Log("Slow Turret Selected");
+        buildManager.SelectTurretToBuild(slowTurret);
     }
 }
