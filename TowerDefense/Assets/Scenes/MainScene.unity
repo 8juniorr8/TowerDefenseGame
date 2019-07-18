@@ -3331,7 +3331,7 @@ MonoBehaviour:
   missileLauncher:
     prefab: {fileID: 6898688427556216860, guid: 4c478ba576c8ce74eb2b62c3b8353e05,
       type: 3}
-    cost: 250
+    cost: 300
   slowTurret:
     prefab: {fileID: 2970099030901054589, guid: 03a3833fe7c3f01448f910bb05b9db56,
       type: 3}
@@ -6051,7 +6051,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: $250
+  m_Text: $300
 --- !u!222 &680464261
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7124,8 +7124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff384004cec56649bff8c4e3bdc8b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 400
-  startLives: 20
+  startMoney: 600
+  startLives: 10
 --- !u!114 &836156860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8513,7 +8513,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: $400
+  m_Text: $600
 --- !u!222 &1016301261
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13540,7 +13540,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 200
+  m_Text: $200
 --- !u!222 &1523669795
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18124,7 +18124,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20 LIVES
+  m_Text: 10 LIVES
 --- !u!222 &1948633293
 CanvasRenderer:
   m_ObjectHideFlags: 0
