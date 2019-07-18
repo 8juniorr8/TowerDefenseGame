@@ -51,7 +51,7 @@ public class Turret : MonoBehaviour{
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
-            targetEnemy = nearestEnemy.GetComponent<Enemy>();
+            //targetEnemy = nearestEnemy.GetComponent<Enemy>();
         } else
         {
             target = null;
@@ -66,13 +66,15 @@ public class Turret : MonoBehaviour{
             return;
 
 
-
+        LockOnTarget();
 
         if (fireCountdown <= 0f)
         {
             Shoot();
             fireCountdown = 1f / fireRate;
         }
+
+        
 
         fireCountdown -= Time.deltaTime;
 
@@ -97,7 +99,16 @@ public class Turret : MonoBehaviour{
 
     void Slow ()
     {
-        targetEnemy.Slow(slowPct);
+        GameObject[] allEnemies;
+        allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in allEnemies)
+        {
+            if (Vector2.Distance(enemy.transform.position, this.transform.position) < range)
+            {
+                enemy.GetComponent<Enemy>().Slow(slowPct);
+            }
+        }
     }
 
     void Shoot ()
