@@ -4,12 +4,14 @@ using UnityEngine;
 public class Turret : MonoBehaviour{
 
     private Transform target;
+    private Enemy targetEnemy;
 
 
     [Header("Attributes")]
     public float range = 15f;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+    public float slowPct = 0f;
 
 
 
@@ -49,6 +51,7 @@ public class Turret : MonoBehaviour{
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+            targetEnemy = nearestEnemy.GetComponent<Enemy>();
         } else
         {
             target = null;
@@ -62,12 +65,7 @@ public class Turret : MonoBehaviour{
         if (target == null)
             return;
 
-        //Target lock on
-        Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        //Dreht sich nicht auf der Z-Achse... Objekt kippt am Anfang einmal, deswegen sieht es so aus...
-        partToRotate.rotation = Quaternion.Euler (rotation.x, rotation.y, 0f);
+
 
 
         if (fireCountdown <= 0f)
@@ -78,10 +76,35 @@ public class Turret : MonoBehaviour{
 
         fireCountdown -= Time.deltaTime;
 
+        if (slowPct > 0f)
+        {
+            Slow();
+        
+        }
+
+
+    }
+
+    void LockOnTarget ()
+    {
+        //Target lock on
+        Vector3 dir = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        //Dreht sich nicht auf der Z-Achse...
+        partToRotate.rotation = Quaternion.Euler(rotation.x, rotation.y, 0f);
+    }
+
+    void Slow ()
+    {
+        targetEnemy.Slow(slowPct);
     }
 
     void Shoot ()
     {
+
+        
+
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
