@@ -29,11 +29,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void EndGame ()
+    public void EndGame ()
     {
         GameIsOver = true;
         gameOverUI.SetActive(true);
 
+    }
+
+    public void Surrender()
+    {
+        EndGame();
     }
 
 }
